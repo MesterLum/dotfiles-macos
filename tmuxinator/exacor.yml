@@ -1,7 +1,7 @@
-# /home/mesterlum/.config/tmuxinator/smart-gas.yml
+# /Users/mesterlum/.config/tmuxinator/exacor.yml
 
-name: smart-gas
-root: ~/development/smartgas
+name: exacor
+root: ~/development/exacor
 
 # Optional tmux socket
 # socket_name: foo
@@ -12,19 +12,19 @@ root: ~/development/smartgas
 # Project hooks
 
 # Runs on project start, always
-#on_project_start: make up
+# on_project_start: command
 
 # Run on project start, the first time
-#on_project_first_start: make build
+# on_project_first_start: command
 
 # Run on project start, after the first time
-#on_project_restart: make stop && make up
+# on_project_restart: command
 
 # Run on project exit ( detaching from tmux session )
-on_project_exit: make stop
+# on_project_exit: command
 
 # Run on project stop
-on_project_stop: make stop
+# on_project_stop: command
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
@@ -45,25 +45,18 @@ on_project_stop: make stop
 # attach: false
 
 windows:
-  - bakcend:
+  - api:
       layout: main-horizontal
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - cd backend && nvim
-        - make up
-  - frontend:
+        - cd api && nvim 
+        - make up-dev
+  - api:
       layout: main-horizontal
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - cd frontend && nvim
-  #- app:
-      #layout: main-horizontal
-      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
-      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
-      # synchronize: after
-      #panes:
-        #- make up
+        - cd site && nvim 

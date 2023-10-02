@@ -24,6 +24,9 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'navarasu/onedark.nvim'
+Plug 'Shadorain/shadotheme'
+Plug 'nikolvs/vim-sunbather'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
@@ -88,9 +91,14 @@ augroup END
 "\}
 "colorscheme onedark
 "colorscheme tokyonight-moon
-colorscheme zenburn
+"colorscheme zenburn
 "colorscheme gruvbox
 "colorscheme embark
+"colorscheme shado
+"let g:lightline = { 'colorscheme': 'deus' }
+colorscheme sunbather
+"set background=dark
+"colorscheme dracula
 "
 "
 " Palenight theme

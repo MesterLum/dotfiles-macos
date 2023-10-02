@@ -21,7 +21,7 @@ config.color_scheme = 'Darktooth (base16)'
 --config.font = wezterm.font('JetBrainsMono Nerd Font', { weight = 'Bold', italic = true })
 --config.font = wezterm.font('JetBrains Mono Nerd', { weight = 'Bold', italic = true })
 wezterm.font("JetBrains Mono", {weight="Bold", stretch="Normal", style="Normal"}) -- /Users/mesterlum/Library/Fonts/JetBrainsMono-Bold.ttf, CoreText
-config.font_size = 14
+config.font_size = 15
 
 config.hide_tab_bar_if_only_one_tab = true
 config.hide_mouse_cursor_when_typing = true
