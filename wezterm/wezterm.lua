@@ -15,12 +15,19 @@ end
 -- For example, changing the color scheme:
 config.color_scheme = "Darktooth (base16)"
 
---config.font = wezterm.font 'Monaco'
+-- config.font = wezterm.font("Monaco")
 --config.font = wezterm.font 'Andala Mono'
 --config.font = wezterm.font('JetBrainsMono Nerd Font', { weight = 'Bold', italic = true })
 -- config.font = wezterm.font("JetBrains Mono", { weight = "Bold", italic = true })
-wezterm.font("JetBrains Mono", { weight = "Bold", stretch = "Normal", style = "Normal" }) -- /Users/mesterlum/Library/Fonts/JetBrainsMono-Bold.ttf, CoreText
--- wezterm.font("Mononoki Nerd") -- /Users/mesterlum/Library/Fonts/JetBrainsMono-Bold.ttf, CoreText
+-- wezterm.font("JetBrains Mono", { weight = "Bold", stretch = "Normal", style = "Normal" }) -- /Users/mesterlum/Library/Fonts/JetBrainsMono-Bold.ttf, CoreText
+-- config.font = wezterm.font("Ubuntu Nerd Font", { weight = "Bold", stretch = "Normal", style = "Normal" })
+-- config.font = wezterm.font("Iosevka Nerd Font Mono", { weight = "Bold", stretch = "Normal", style = "Italic" })
+-- config.font = wezterm.font("JetBrains Mono", { weight = "Bold", stretch = "Normal", style = "Normal" })
+-- config.font = wezterm.font("Lilex Nerd Font Mono", { weight = "Regular", stretch = "Normal", style = "Normal" })
+-- config.font = wezterm.font("FantasqueSansM Nerd Font Mono", { weight = "Bold", stretch = "Normal", style = "Italic" })
+-- config.font = wezterm.font("VictorMono Nerd Font Mono", { weight = "Black", stretch = "Normal", style = "Normal" })
+config.font = wezterm.font("CaskaydiaCove Nerd Font Mono", { weight = "Black", stretch = "Normal", style = "Italic" })
+-- config.font = wezterm.font("Hasklug Nerd Font Mono", { weight = "Black", stretch = "Normal", style = "Italic" })
 config.font_size = 15
 
 config.hide_tab_bar_if_only_one_tab = true
