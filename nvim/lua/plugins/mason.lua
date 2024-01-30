@@ -38,6 +38,8 @@ return {
 				"prismals",
 				"pyright",
 				"gopls",
+				"clangd",
+				"terraformls",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
@@ -54,6 +56,7 @@ return {
 				"gofumpt",
 				"golines",
 				"goimports",
+				"clang-format",
 			},
 		})
 	end,

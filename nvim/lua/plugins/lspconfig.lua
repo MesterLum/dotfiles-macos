@@ -149,6 +149,10 @@ return {
 			on_attach = on_attach,
 		})
 
+		lspconfig["terraformls"].setup({
+			cmd = { "terraform-ls", "serve" },
+		})
+
 		-- configure lua server (with special settings)
 		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,
