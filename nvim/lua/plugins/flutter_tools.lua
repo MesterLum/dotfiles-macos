@@ -10,7 +10,9 @@ return {
 		local flutter_tools = require("flutter-tools")
 		local telescope = require("telescope")
 
-		flutter_tools.setup()
+		flutter_tools.setup({
+			fvm = true,
+		})
 
 		telescope.load_extension("flutter")
 
