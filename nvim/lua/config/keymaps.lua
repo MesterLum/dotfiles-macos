@@ -15,8 +15,8 @@ keymap.set("n", "<leader>vs", "<cmd>:vs<cr>", { desc = "vertical split", noremap
 keymap.set("n", "<leader>hs", "<cmd>:split<cr>", { desc = "horizontal split", noremap = true, silent = true })
 keymap.set("n", "<C-A-k>", "<cmd>:resize -2<cr>", { noremap = true, silent = true })
 keymap.set("n", "<C-A-j>", "<cmd>:resize +2<cr>", { noremap = true, silent = true })
-keymap.set("n", "<C-A-h>", "<cmd>:vertical resize -2<cr>", { noremap = true, silent = true })
 keymap.set("n", "<C-A-l>", "<cmd>:vertical resize +2<cr>", { noremap = true, silent = true })
+keymap.set("n", "<C-A-h>", "<cmd>:vertical resize -2<cr>", { noremap = true, silent = true })
 -- nnoremap <A-k>  :resize -2<CR>
 -- nnoremap <A-j>  :resize +2<CR>
 -- nnoremap <A-h>  :vertical resize -2<CR>
