@@ -64,20 +64,36 @@ return {
 
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		-- (not in youtube nvim video)
-		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-		for type, icon in pairs(signs) do
-			local hl = "DiagnosticSign" .. type
-			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-		end
+		vim.diagnostic.config({
+			virtual_text = true,
+			signs = {
+				text = {
+					[vim.diagnostic.severity.ERROR] = "",
+					[vim.diagnostic.severity.WARN] = "",
+					[vim.diagnostic.severity.INFO] = "󰋼",
+					[vim.diagnostic.severity.HINT] = "󰌵",
+				},
+			},
+			float = {
+				border = "rounded",
+				format = function(d)
+					return ("%s (%s) [%s]"):format(d.message, d.source, d.code or d.user_data.lsp.code)
+				end,
+			},
+			underline = true,
+			jump = {
+				float = true,
+			},
+		})
 
 		-- configure html server
 		lspconfig["html"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
-
+		--
 		-- configure typescript server with plugin
-		lspconfig["tsserver"].setup({
+		lspconfig["ts_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
@@ -90,6 +106,68 @@ return {
 
 		-- configure tailwindcss server
 		lspconfig["tailwindcss"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			filetypes = {
+				"aspnetcorerazor",
+				"astro",
+				"astro-markdown",
+				"blade",
+				"clojure",
+				"django-html",
+				"htmldjango",
+				"edge",
+				"eelixir",
+				"elixir",
+				"ejs",
+				"erb",
+				"eruby",
+				"gohtml",
+				"gohtmltmpl",
+				"haml",
+				"handlebars",
+				"hbs",
+				"html",
+				"htmlangular",
+				"html-eex",
+				"heex",
+				"jade",
+				"leaf",
+				"liquid",
+				"markdown",
+				"mdx",
+				"mustache",
+				"njk",
+				"nunjucks",
+				"php",
+				"razor",
+				"slim",
+				"twig",
+				"css",
+				"less",
+				"postcss",
+				"sass",
+				"scss",
+				"stylus",
+				"sugarss",
+				"javascript",
+				"javascriptreact",
+				"reason",
+				"rescript",
+				"typescript",
+				"typescriptreact",
+				"vue",
+				"svelte",
+				"templ",
+			},
+		})
+
+		lspconfig["dockerls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		lspconfig["docker_compose_language_service"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
@@ -156,11 +234,27 @@ return {
 			on_attach = on_attach,
 		})
 
+		-- configure clang server
+		-- lspconfig["clangd"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- })
+
 		-- configure python server
 		lspconfig["dartls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
+
+		-- lspconfig["ruff_lsp"].setup({
+		-- 	init_options = {
+		-- 		settings = {
+		-- 			-- Ruff language server settings go here
+		-- 		},
+		-- 	},
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- })
 
 		lspconfig["terraformls"].setup({
 			cmd = { "terraform-ls", "serve" },
