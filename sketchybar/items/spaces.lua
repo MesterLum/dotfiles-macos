@@ -3,14 +3,14 @@ local icons = require("icons")
 local settings = require("settings")
 local app_icons = require("helpers.app_icons")
 
-local spaces = {}
+local spaces = { "󰅩", "󰈹", "󰭹", "󰎇", "󰌢" }
 
-for i = 1, 7, 1 do
+for i, name in ipairs(spaces) do
 	local space = sbar.add("space", "space." .. i, {
 		space = i,
 		icon = {
 			font = { family = settings.font.numbers },
-			string = i,
+			string = name,
 			padding_left = 15,
 			padding_right = 8,
 			color = colors.white,
