@@ -18,7 +18,6 @@ return {
 			vim.keymap.set("n", "<leader>gD", function()
 				gitsigns.diffthis("~")
 			end, { desc = "Diff this against last commit" })
-			-- Git blame
 		end,
 	},
 	{

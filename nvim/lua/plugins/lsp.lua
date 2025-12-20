@@ -16,6 +16,10 @@ return {
 		require("mason-tool-installer").setup({
 			ensure_installed = {
 				"stylua", -- Lua formatter
+				"prettier",
+				"gofumpt", -- Go formatter
+				"goimports", -- Go import organizer
+				"golines", -- Go line formatter
 			},
 		})
 
