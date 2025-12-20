@@ -9,8 +9,9 @@ return {
 	config = function()
 		require("mason").setup()
 		-- 1. AUTOMATE LSP INSTALLATION
+		local lsp_servers = { "gopls", "basedpyright", "lua_ls", "ruff", "docker_language_server" }
 		require("mason-lspconfig").setup({
-			ensure_installed = { "gopls", "basedpyright", "lua_ls", "ruff" }, -- Auto-install these LSPs
+			ensure_installed = lsp_servers, -- Auto-install these LSPs
 		})
 		-- 2. Automate Formatter/Linter installation
 		require("mason-tool-installer").setup({
@@ -67,10 +68,9 @@ return {
 
 		-- 4. ENABLE SERVERS
 		-- This tells Neovim to start these servers when the matching filetypes are opened.
-		vim.lsp.enable("gopls")
-		vim.lsp.enable("basedpyright")
-		vim.lsp.enable("ruff")
-		vim.lsp.enable("lua_ls")
+		for _, server in ipairs(lsp_servers) do
+			vim.lsp.enable(server)
+		end
 
 		--Diagnostics settings
 		vim.diagnostic.config({
