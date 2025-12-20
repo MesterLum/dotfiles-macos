@@ -26,7 +26,14 @@ return {
 		keymap = {
 			preset = "none",
 			["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
-			["<CR>"] = { "select_and_accept" },
+			["<CR>"] = {
+				function(cmp)
+					if cmp.is_visible() then
+						return cmp.select_and_accept()
+					end
+				end,
+				"fallback",
+			},
 
 			["<C-b>"] = { "scroll_documentation_up", "fallback" },
 			["<C-f>"] = { "scroll_documentation_down", "fallback" },
