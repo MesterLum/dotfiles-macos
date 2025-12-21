@@ -35,23 +35,25 @@ return {
 		},
 		config = function()
 			local codecompanion = require("codecompanion")
-			local adapters = require("codecompanion.adapters")
 			codecompanion.setup({
+				adapters = {
+					http = {
+						copilot = function()
+							return require("codecompanion.adapters").extend("copilot", {
+								schema = {
+									model = {
+										-- default = "claude-sonnet-4.5",
+										default = "gpt-4.1",
+									},
+								},
+							})
+						end,
+					},
+				},
 				strategies = {
 					chat = { adapter = "copilot" },
 					inline = { adapter = "copilot" },
 					agent = { adapter = "copilot" },
-				},
-				adapters = {
-					copilot = function()
-						return adapters.extend("copilot", {
-							schema = {
-								model = {
-									default = "claude-3.5-sonnet",
-								},
-							},
-						})
-					end,
 				},
 				chat = {
 					save_history = true,
@@ -108,6 +110,7 @@ Requirements:
 					},
 				},
 			})
+			vim.cmd([[cab cc CodeCompanion]])
 			local set = vim.keymap.set
 			set({ "n", "v" }, "<leader>cc", "<cmd>CodeCompanionChat Toggle<CR>", { desc = "CodeCompanion Chat" })
 			set({ "n", "v" }, "<leader>cp", "<cmd>CodeCompanionChat Add<CR>", { desc = "CodeCompanion Add to context" })
