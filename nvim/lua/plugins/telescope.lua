@@ -14,11 +14,13 @@ return {
 			pickers = {
 				find_files = {
 					theme = "ivy",
+					hidden = true,
 				},
 			},
 			defaults = {
 				file_ignore_patterns = {
 					"node_modules",
+					".git/",
 				},
 				path_display = { "truncate " },
 				mappings = {
