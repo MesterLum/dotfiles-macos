@@ -29,6 +29,10 @@ return {
 							},
 						},
 						panel = { enabled = false },
+						filetypes = {
+							python = false,
+							go = false,
+						},
 					})
 				end,
 			},
@@ -42,8 +46,8 @@ return {
 							return require("codecompanion.adapters").extend("copilot", {
 								schema = {
 									model = {
-										-- default = "claude-sonnet-4.5",
-										default = "gpt-4.1",
+										default = "claude-sonnet-4.5",
+										-- default = "gpt-4.1",
 									},
 								},
 							})

@@ -41,7 +41,9 @@ return {
 		vim.lsp.config("gopls", {
 			settings = {
 				gopls = {
-					analyzers = { unusedparams = true },
+					analyses = {
+						unusedparams = true,
+					},
 					staticcheck = true,
 					gofumpt = true,
 				},
