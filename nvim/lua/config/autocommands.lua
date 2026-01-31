@@ -13,3 +13,9 @@ set_filetype({ "compose.override.yaml" }, "yaml.docker-compose")
 set_filetype({ "compose.override.yaml" }, "yaml.docker-compose")
 set_filetype({ "docker-compose.override.yaml" }, "yaml.docker-compose")
 set_filetype({ "docker-compose.override.yaml" }, "yaml.docker-compose")
+
+vim.filetype.add({
+	extension = {
+		templ = "templ",
+	},
+})

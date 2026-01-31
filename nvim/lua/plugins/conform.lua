@@ -14,6 +14,7 @@ return {
 			yaml = { "prettier" },
 			markdown = { "prettier" },
 			graphql = { "prettier" },
+			templ = { "templ" },
 		},
 		-- Format on save settings
 		format_on_save = {
