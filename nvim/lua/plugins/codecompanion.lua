@@ -32,6 +32,8 @@ return {
 						filetypes = {
 							python = false,
 							go = false,
+							-- cpp = false,
+							-- c = false,
 						},
 					})
 				end,

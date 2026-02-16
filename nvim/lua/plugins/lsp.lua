@@ -9,7 +9,7 @@ return {
 	config = function()
 		require("mason").setup()
 		-- 1. AUTOMATE LSP INSTALLATION
-		local lsp_servers = { "gopls", "basedpyright", "lua_ls", "ruff", "docker_language_server", "templ" }
+		local lsp_servers = { "gopls", "basedpyright", "lua_ls", "ruff", "docker_language_server", "templ", "clangd" }
 		require("mason-lspconfig").setup({
 			ensure_installed = lsp_servers, -- Auto-install these LSPs
 		})
